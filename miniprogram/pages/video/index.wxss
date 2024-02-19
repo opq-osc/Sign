@@ -1,0 +1,56 @@
+/* pages/video/index.wxss */
+
+
+.video_index {
+  padding: 0 40rpx;
+  margin-top: 20rpx;
+}
+.video_index .video_content .video_title {
+  color: #222;
+  font-size: 28rpx;
+  font-weight: 600;
+  margin: 32rpx 0;
+}
+
+
+.video_index .video_content video {
+  border-radius: 16rpx;
+  width: 100%;
+}
+
+.video_index .video_content .video_button {
+  display: flex;
+  justify-content: center;
+  margin-top: 52rpx;
+}
+
+.video_index .video_content .video_button .save_cover,.video_index .video_content .video_button .save_video {
+  border: 1rpx solid #222;
+  border-radius: 50rpx;
+  color: #222;
+  font-size: 28rpx;
+  font-weight: 600;
+  padding: 20rpx 40rpx;
+}
+
+.video_index .video_content .video_button .save_video {
+  margin-left: 48rpx;
+}
+
+.video_index .video_content .share {
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-bottom: 16rpx;
+  margin-top: 40rpx;
+}
+
+.video_index .video_content .icon-weixin,.video_index .video_content .share {
+  color: #222;
+  display: flex;
+  justify-content: center;
+}
+
+.video_index .video_content .icon-weixin {
+  background-color: #fff;
+  font-size: 80rpx;
+}

@@ -1,0 +1,24 @@
+{
+  "miniprogramRoot": "miniprogram/",
+  "appid": "wxf6df9dff4c2b9566",
+  "compileType": "miniprogram",
+  "srcMiniprogramRoot": "miniprogram/",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "minified": true,
+    "es6": true,
+    "enhance": true
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}

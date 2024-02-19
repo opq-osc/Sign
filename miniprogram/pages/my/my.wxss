@@ -1,0 +1,86 @@
+ .self-w {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   position: relative;
+   margin-top: 180rpx;
+ }
+
+ .self-user-img {
+   height: 160rpx;
+   width: 160rpx;
+   border-radius: 100rpx;
+   position: relative;
+   flex-shrink: 0;
+ }
+
+ .self-user-img-vip {
+   position: absolute;
+   width: 50rpx;
+   height: 50rpx;
+   bottom: 0;
+   right: 0rpx;
+ }
+
+ .self-user-info-name {
+   font-size: 40rpx;
+   flex-grow: 1;
+   font-weight: bold;
+ }
+
+ .self-user-info {
+
+   margin: 0rpx 20rpx;
+
+ }
+
+ .self-user-info-describe {
+   color: #807C7C;
+   font-size: 20rpx;
+   margin-top: 18rpx;
+ }
+
+ .self-user-vip {
+   background-color: rgb(128, 211, 183);
+   color: #FFFFFF;
+   border-radius: 100rpx;
+   padding: 6rpx 20rpx;
+ }
+
+ .self-user-uid {
+   background-color: rgb(238, 191, 147);
+   margin-left: 20rpx;
+ }
+
+ .input-custom-class {
+   top: 120rpx !important;
+   padding: 20rpx !important;
+ }
+
+ .button-custom-class {
+   width: 90% !important;
+   margin-left: 40rpx !important;
+   margin-top: 160rpx !important;
+ }
+
+ .font-size-custom-class {
+   font-size: 30rpx !important;
+ }
+
+
+ .video_help {
+  margin: 85rpx;
+}
+
+.video_help .tutorial_item_wrap image {
+  border: 1rpx solid #efefef;
+  border-radius: 20rpx;
+}
+
+.video_help .tutorial_item_wrap .tutorial_content {
+  color: #222;
+  font-size: 28rpx;
+  font-weight: 600;
+  margin: 40rpx 0;
+}

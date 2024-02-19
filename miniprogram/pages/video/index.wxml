@@ -1,0 +1,25 @@
+<!--pages/video/index.wxml-->
+<!-- <view class="cover-bg-view">
+  <image src="../../icons/bg.png" class="fengrui-img" mode="aspectFill"></image>
+</view> -->
+<view class="video_index">
+  <view class="video_content">
+    <block wx:if="{{!finderObj.FinderObjectDesc.Media[0].Url}}"></block>
+    <block wx:else>
+      <!-- <view class="video_title">获取成功</view> -->
+      <video loop src="{{finderObj.FinderObjectDesc.Media[0].Url}}"></video>
+      <view class="video_button">
+        <view bindtap="handleSaveCover" class="save_cover" data-id="{{finderObj.FinderObjectDesc.Media[0].ThumbUrl}}">保存封面</view>
+        <view bindtap="handleSaveVideo" class="save_video" data-id="{{finderObj.FinderObjectDesc.Media[0].Url}}">保存视频</view>
+        <block wx:if="{{!hideCtrl}}">
+          <view bindtap="handleCopyVideoUrl" class="save_video" data-id="{{finderObj.FinderObjectDesc.Media[0].Url}}">视频地址</view>
+        </block>
+      </view>
+
+
+      <!-- <view class="share">推荐给好友</view>
+      <view class="iconfont icon-weixin">111
+      </view> -->
+    </block>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/waimai/waimai.wxml--> open-type="contact"
+<van-button  type="primary" >联系客服</van-button>

@@ -1,0 +1,104 @@
+<view class="cover-bg-view">
+  <image src="../../icons/bg.png" class="img" mode="aspectFill"></image>
+</view>
+<!-- 用户 -->
+<view class="self-w">
+  <view class="self-user-img">
+    <block wx:if="{{isUser}}">
+      <image src="{{userInfo.avatarUrl}}" class="img" style="filter: grayscale(0%);   border-radius: 100rpx;" mode="aspectFill"></image>
+      <image class="self-user-img-vip" wx:if="{{isUser}}" src="{{ vip == false ? '../../icons/blue-vip.svg':'../../icons/yellow-vip.svg'}}" mode="aspectFill" />
+    </block>
+    <block wx:else="">
+      <image src="../../icons/user.png" class="img" style="{{vip == false ? 'filter: grayscale(100%)':'filter: grayscale(0%)'}}" mode="aspectFill"></image>
+    </block>
+
+
+  </view>
+
+  <view class="self-user-info">
+    <view class="self-user-info-name" wx:if="{{isUser}}">
+      {{userInfo.nickName}}
+    </view>
+    <view class="self-user-info-name" wx:else="" bind:tap="onBtnLoginClick">
+      点击登录
+    </view>
+
+    <!-- <view class="self-user-info-describe" wx:if="{{isUser}}">
+      <text class="self-user-vip">VIP:{{lmUserInfo.vipTime}}</text>
+      <text class="self-user-uid self-user-vip">UID: {{lmUserInfo.id}}</text>
+    </view> -->
+  </view>
+</view>
+<van-divider />
+
+<!-- <button open-type="contact" bindcontact="handleContact" >联系客服</button> -->
+<van-cell-group inset>
+
+  <van-cell title="签到" is-link bind:click="showPopupProject" custom-class="font-size-custom-class">
+  </van-cell>
+
+  <van-popup position="bottom" custom-style="height: 50%;" closeable show="{{ qiandaoShow }}" bind:close="onClose">
+
+    <van-field model:value="{{ projectName }}" is-link label="签到项目" placeholder="请选签到项目" bind:tap="onProjecClick" custom-class="input-custom-class" />
+    <van-popup position="bottom" custom-style="height: 30%;" show="{{ projectShow }}" bind:close="onProjectClose">
+      <van-picker show-toolbar columns="{{ projectColumns }}" default-index="{{ projectIndex }}" bind:confirm="onConfirm" bind:cancel="onCancel" />
+
+    </van-popup>
+
+    <van-button type="primary" color="#F4D03F" custom-class="button-custom-class" bind:click="onBtnQianDaoClick">签到</van-button>
+
+    <!-- <van-field value="{{ fieldValue }}" label="TOKEN" placeholder="默认自动生成" custom-class="input-custom-class" /> -->
+  </van-popup>
+
+
+
+  <van-cell title="绑定" is-link bind:click="showPopupBanngDing" custom-class="font-size-custom-class" />
+
+  <van-popup position="bottom" custom-style="height: 50%;" closeable show="{{ bangdingShow }}" bind:close="onBangdingClose">
+
+    <van-field model:value="{{ projectName }}" is-link label="绑定项目" placeholder="请选绑定项目" bind:tap="onProjecClick" custom-class="input-custom-class" />
+    <van-popup position="bottom" custom-style="height: 30%;" show="{{ projectShow }}" bind:close="onProjectClose">
+      <van-picker show-toolbar columns="{{ projectColumns }}" default-index="{{ projectIndex }}" bind:confirm="onConfirm" bind:cancel="onCancel" />
+
+    </van-popup>
+
+    <van-field model:value="{{ projectToken }}" label="TOKEN" placeholder="默认自动生成" clearable custom-class="input-custom-class" />
+    <van-button type="primary" color="#F4D03F" custom-class="button-custom-class" bind:click="onBtnBanngDingClick">绑定</van-button>
+
+
+  </van-popup>
+
+  <van-dialog id="van-dialog" />
+  <block wx:if="{{!hideCtrl}}">
+    <van-cell title="下载说明" value="下载视频指南" is-link custom-class="font-size-custom-class" bind:click="showShuoming" />
+    <van-popup position="bottom" custom-style="height: 80%;" closeable show="{{ shuomingShow }}" bind:close="onshuomingClose">
+    
+      <view class="video_help">
+        <view class="tutorial_item_wrap" wx:for="{{tutorials}}" wx:key="*this">
+          <view class="tutorial_content">{{item.tutorialContent}}</view>
+          <image mode="widthFix" src="{{item.tutorialImage}}"></image>
+
+        </view>
+      </view>
+    </van-popup>
+
+
+    <van-cell title="绑定说明" value="绑定账号指南" is-link custom-class="font-size-custom-class" bind:click="showBangDingShuoming" />
+    <van-popup position="bottom" custom-style="height: 80%;" closeable show="{{ bangdinngShuomingShow }}" bind:close="onBangDingShuomingClose">
+      <view class="video_help">
+      1.用户首次需登录
+      登录成功后绑定 视频号 项目 TOKEN为空
+      </view>
+      <view class="video_help">
+      2.绑定成功后 可根据项目每日签到进行白嫖,每日下载次数+10 连续签到有加成奖励
+      </view>
+    </van-popup>
+  </block>
+  <!-- <van-cell title="关于我们" value="内容" label="描述信息" /> -->
+</van-cell-group>
+
+
+<van-divider />
+<van-button open-type="contact" type="primary" block style="padding: 36rpx;" color="#F4D03F">联系客服</van-button>
+
+<!-- <van-button open-type="contact" type="primary" size="large" style="padding: 20rpx;" color="#F4D03F">联系客服</van-button>  -->
